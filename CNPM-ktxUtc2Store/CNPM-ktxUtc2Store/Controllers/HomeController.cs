@@ -16,15 +16,15 @@ namespace CNPM_ktxUtc2Store.Controllers
             _homeRepository = homeRepository;
         }
 
-        public async Task<IActionResult>Index(string sTerm="",int categoryId=0)
+        public async Task<IActionResult>Index(string sterm="",int categoryId=0)
         {
-            IEnumerable<product> products= await _homeRepository.GetProduct(sTerm,categoryId);
-            IEnumerable<category> categories = await _homeRepository.Categories();
+            IEnumerable<product> productss= await _homeRepository.GetProduct(sterm,categoryId);
+            IEnumerable<category> categoriess = await _homeRepository.Categories();
             var productDisplayModel = new productDisplayModel
             {
-                products = products,
-                categories = categories,
-                sTerm=sTerm,
+                products = productss,
+                categories = categoriess,
+                sterm=sterm,
                 categoryId=categoryId
             };
             return View(productDisplayModel);

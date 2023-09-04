@@ -4,8 +4,8 @@
     {
         public IEnumerable<product>products { get; set; }
         public IEnumerable<category> categories { get; set; }
-        public string sTerm { get; set; }
-        public int categoryId { get; set; } 
+        public string sterm { get; set; } = "";
+        public int categoryId { get; set; } = 0;
     }
 
 }
