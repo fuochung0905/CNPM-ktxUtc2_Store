@@ -4,21 +4,35 @@ namespace CNPM_ktxUtc2Store.Controllers
 {
     public class CartController : Controller
     {
-        public IActionResult AddItem(int productId, int quantity=1)
+        private readonly ICartService _cartService;
+        public CartController(ICartService cartService)
         {
-            return View();
+            _cartService = cartService;
         }
-        public IActionResult Remove(int productId)
+        public async Task<IActionResult> AddItem(int productId, int quantity=1,int redirect=0)
         {
-            return View();
+            var cartCount = await _cartService.AddItem(productId, quantity);
+            if(redirect == 0) { 
+                return Ok(cartCount);
+            }
+            return RedirectToAction("GetUserCart");
         }
-        public IActionResult GetUserCart()
+
+        public async Task<IActionResult> Remove(int productId)
         {
-            return View();
+            var cartCount= await _cartService.RemoveItem(productId);
+
+            return RedirectToAction("GetUserCart");
         }
-        public IActionResult GetTotalItemInCart()
+        public async Task<IActionResult> GetUserCart()
         {
-            return View();
+            var cart= await _cartService.GetUserCart();
+            return View(cart);
+        }
+        public async Task<IActionResult> GetTotalItemInCart()
+        {
+            int cartItem=await _cartService.GetCartItemCount();
+            return Ok(cartItem);
         }
 
     }

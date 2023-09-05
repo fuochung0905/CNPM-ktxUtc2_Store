@@ -45,19 +45,31 @@
         </nav>
     </header>
     <div class="container">
-        <main role="main" class="pb-3">
             @RenderBody()
-        </main>
     </div>
+   
+    <script>
+        loadcartcount();
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2023 - CNPM_ktxUtc2Store - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
+        async function loadcartcount() {
+            console.log("text");
+            try {
+                var response = await fetch(`/Cart/GetTotalItemInCart`);
+                if (response.status == 200) {
+                    var result = await response.json();
+                    var cartcountel = document.getElementById("cartCount");
+                    cartcountel.innerHTML = result;
+                }
+            }
+            catch (err) {
+                console.log(err);
+            }
+        }
+    </script>
+  
 </body>
+
+
+
 </html>
+@await RenderSectionAsync("Scripts", required: false)

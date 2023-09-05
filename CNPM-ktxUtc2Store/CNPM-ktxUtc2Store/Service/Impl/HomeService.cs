@@ -22,7 +22,7 @@ namespace CNPM_ktxUtc2Store.Service.Impl
             IEnumerable<product> products = await (from product in _dbcontext.products
                                                    join category in _dbcontext.categories
                                                    on product.categoryId equals category.Id
-                                                  where string.IsNullOrWhiteSpace(sterm) ||( product != null && product.productName.ToLower().StartsWith(sterm))
+                                                  where string.IsNullOrWhiteSpace(sterm) ||( product != null && product.productName.ToLower().Contains(sterm))
                                                    select new product
                                                    {
                                                        Id = product.Id,

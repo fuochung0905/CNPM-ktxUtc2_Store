@@ -25,6 +25,9 @@
         <div class="col-12">
             <button type="submit" class="btn btn-primary">Search</button>
         </div>
+        <div class="col-12">
+            <a class="btn btn-dark" href="/Home/Index">Reset</a>
+        </div>
     </form>
 </div>
 
@@ -41,11 +44,40 @@
                         price:@product.price
 
                     </p>
-                    <a href="#" class="btn btn-primary">Add the card</a>
+                
+                <button type="button" onclick="AddItem(@product.Id)" class="btn btn-primary">Thêm vào giỏ hàng</button>
 
                 </div>
         </div>
     }
-
    
 </div>
+@section Scripts{
+    <script> 
+        async function AddItem(productId) {
+              var usernameEl = document.getElementById("username");
+
+        if (usernameEl == null) {
+
+           
+                window.location.href = "/Identity/Account/Login";
+            
+        }
+            try 
+            {
+                var response = await fetch(`/Cart/AddItem?productId=${productId}`);
+                if (response.status==200) 
+                {
+                    var result = await response.json();
+                    console.log(result);
+                    var cartCountEl = document.getElementById("cartCount");
+                    cartCountEl.innerHTML = result;
+                    window.location.href="#cartCount"
+                }
+            }
+            catch(err){
+                console.log(err);
+            }
+        }
+    </script>
+}

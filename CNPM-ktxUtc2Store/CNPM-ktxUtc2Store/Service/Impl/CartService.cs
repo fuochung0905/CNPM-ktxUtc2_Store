@@ -1,19 +1,20 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
 
 namespace CNPM_ktxUtc2Store.Service.Impl
 {
     public class CartService : ICartService
     {
         private readonly ApplicationDbContext _context;
-        private readonly UserManager<ApplicationUser> _user;
-        private readonly IHttpContextAccessor _contextAccessor;
-        public CartService(ApplicationDbContext context, UserManager<ApplicationUser> user, IHttpContextAccessor httpContextAccessor)
+        private readonly UserManager<IdentityUser> _usermanagement;
+        private readonly IHttpContextAccessor _httpContextAccessor;
+        public CartService(ApplicationDbContext context, UserManager<IdentityUser> usermanagement, IHttpContextAccessor httpContextAccessor)
         {
 
             _context = context;
-            _user = user;
-            _contextAccessor = httpContextAccessor;
+            _usermanagement = usermanagement;
+            _httpContextAccessor = httpContextAccessor;
 
         }
         public async Task<int> AddItem(int productId, int quantity)
@@ -24,9 +25,6 @@ namespace CNPM_ktxUtc2Store.Service.Impl
             string userId = GetUserId();
             try
             {
-
-
-
                 if (string.IsNullOrEmpty(userId))
                 {
                     throw new Exception("user is not logged-in");
@@ -132,10 +130,12 @@ namespace CNPM_ktxUtc2Store.Service.Impl
 
         public async Task<int> GetCartItemCount(string userId = "")
         {
+            
             if (!string.IsNullOrEmpty(userId))
             {
                 userId = GetUserId();
             }
+
             var data = await (from cart in _context.shoppingCarts
                               join cartDetail in _context.cartDetails
                               on cart.Id equals cartDetail.shoppingCartId
@@ -154,8 +154,10 @@ namespace CNPM_ktxUtc2Store.Service.Impl
         }
         private string GetUserId()
         {
-            var principal = _contextAccessor.HttpContext.User;
-            string userId = _user.GetUserId(principal);
+
+            var pricipal = _httpContextAccessor.HttpContext.User;
+            string userId = _usermanagement.GetUserId(pricipal);
+
             return userId;
         }
     }
