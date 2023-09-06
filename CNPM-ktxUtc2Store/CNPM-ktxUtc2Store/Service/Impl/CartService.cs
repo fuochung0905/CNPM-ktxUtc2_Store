@@ -21,8 +21,9 @@ namespace CNPM_ktxUtc2Store.Service.Impl
         {
             // cart -save
             //cartDetail -error
-            using var transaction = _context.Database.BeginTransaction();
             string userId = GetUserId();
+            using var transaction = _context.Database.BeginTransaction();
+            
             try
             {
                 if (string.IsNullOrEmpty(userId))
@@ -128,7 +129,7 @@ namespace CNPM_ktxUtc2Store.Service.Impl
 
         }
 
-        public async Task<int> GetCartItemCount(string userId = "")
+        public async Task<int> GetCartItemCount(string userId ="")
         {
             
             if (!string.IsNullOrEmpty(userId))
@@ -154,10 +155,8 @@ namespace CNPM_ktxUtc2Store.Service.Impl
         }
         private string GetUserId()
         {
-
             var pricipal = _httpContextAccessor.HttpContext.User;
             string userId = _usermanagement.GetUserId(pricipal);
-
             return userId;
         }
     }

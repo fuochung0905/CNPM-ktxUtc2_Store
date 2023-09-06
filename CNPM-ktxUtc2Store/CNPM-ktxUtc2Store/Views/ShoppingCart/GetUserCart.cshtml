@@ -1,0 +1,48 @@
+﻿@model shoppingCart 
+@{
+    ViewData["Title"] = "GetUserCart";
+}
+<div style="width:90%; margin:auto">
+    @if (Model != null &&  Model.cartDetails!= null&& Model.cartDetails.Count>0)
+    {
+        <h3>Gio hang cua toi</h3>
+       
+        <table class="table table-bordered">
+            <tr>
+                <th>Product</th>
+                <th>Image</th>
+                <th>Category</th>
+                <th>Quantity</th>
+                <th>Total Price</th>
+                <th>Action</th>
+            </tr>
+            @foreach (var item in Model.cartDetails)
+            {
+                <tr>
+                    <td>@item.product.productName</td>
+                    <td>
+                        <img src="/images/@item.product.imageUrl" style="width:80px;height:100px">
+                    </td>
+                    <td>@item.product.categoryName</td>
+                    <td>@item.quantity</td>
+                    <td>@(item.quantity * item.product.price)</td>
+                    <td>
+                        <a class="btn btn-info" href="/Cart/AddItem?productId=@item.productId">+</a>
+                        <a class="btn btn-info" href="/Cart/Remove?productId=@item.productId">-</a>
+                    </td>
+                </tr>
+                }
+            
+        </table>
+
+        <div class="my-2">
+            <h5>Total:</h5>
+            @(Model.cartDetails.Select(item => item.product.price * item.quantity).Sum())
+        </div>
+        }
+   
+     
+    
+   
+   
+</div>

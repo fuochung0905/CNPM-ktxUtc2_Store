@@ -50,25 +50,29 @@
    
     <script>
         loadcartcount();
-
         async function loadcartcount() {
-            console.log("text");
-            try {
-                var response = await fetch(`/Cart/GetTotalItemInCart`);
-                if (response.status == 200) {
-                    var result = await response.json();
-                    var cartcountel = document.getElementById("cartCount");
-                    cartcountel.innerHTML = result;
+            var usernameEl = document.getElementById("username");
+            if (usernameEl == null) {
+                cartcountel.innerHTML = 0;
+
+            } else {
+                try {
+                    var response = await fetch(`/Cart/GetTotalItemInCart`);
+                    if (response.status == 200) {
+                        var result = await response.json();
+                        var cartcountel = document.getElementById("cartCount");
+                        cartcountel.innerHTML = result;
+                    }
+                }
+                catch (err) {
+                    console.log(err);
                 }
             }
-            catch (err) {
-                console.log(err);
-            }
+
         }
     </script>
   
 </body>
-
 
 
 </html>
