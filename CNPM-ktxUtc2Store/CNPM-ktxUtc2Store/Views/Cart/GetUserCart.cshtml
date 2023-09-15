@@ -12,7 +12,6 @@
                 <tr>
                     <th>Product</th>
                     <th>Image</th>
-                    <th>Category</th>
                     <th>Quantity</th>
                     <th>Total Price</th>
                     <th>Action</th>
@@ -23,11 +22,10 @@
                     <td>
                         <img src="/images/@item.product.imageUrl" style="width:80px;height:100px">
                     </td>
-                    <td>@item.product.categoryName</td>
                     <td>@item.quantity</td>
                     <td>@item.quantity*@item.product.price</td>
                     <td>
-                        <a class="btn btn-info" href="/Cart/AddItem?productId=@item.productId">+</a>
+                        <a class="btn btn-info" href="/Cart/AddItem?productId=@item.productId&&redirect=1 ">+</a>
                         <a class="btn btn-info" href="/Cart/Remove?productId=@item.productId">-</a>
                     </td>
                 </tr>

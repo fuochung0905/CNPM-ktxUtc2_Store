@@ -17,6 +17,57 @@ namespace CNPM_ktxUtc2Store.Service.Impl
             _httpContextAccessor = httpContextAccessor;
 
         }
+        public async Task<bool> DoCheck()
+        {
+            using var transaction=_context.Database.BeginTransaction();
+            try
+            {
+                var userId = GetUserId();
+                if(string.IsNullOrEmpty(userId))
+                {
+                    throw new Exception("User is not logge0in");
+                }
+                var cart = await GetCart(userId);
+                if(cart is null)
+                {
+                    throw new Exception("Invalid cart");
+                }
+                var cartDetail=_context.cartDetails.Where(a=>a.shoppingCartId==cart.Id).ToList();
+                if (cartDetail.Count == 0)
+                {
+                    throw new Exception("cart is empty");
+                }
+                var order = new order
+                {
+                    userId = userId,
+                    createDate = DateTime.UtcNow,
+                    orderStatusId = 0
+
+                };
+                _context.Add(order);
+                _context.SaveChanges();
+                foreach(var item in cartDetail)
+                {
+                    var orderDetail = new orderDetail
+                    {
+                        productId = item.productId,
+                        orderId = order.Id,
+                        quantity = item.quantity,
+                    };
+                    _context.orderDetails.Add(orderDetail);
+                }
+                _context.SaveChanges();
+                _context.cartDetails.RemoveRange(cartDetail);
+                _context.SaveChanges();
+                transaction.Commit();
+                return true;
+            }
+
+            catch(Exception ex) {
+                return false;
+            }
+        }
+
         public async Task<int> AddItem(int productId, int quantity)
         {
             // cart -save
@@ -49,6 +100,7 @@ namespace CNPM_ktxUtc2Store.Service.Impl
                 }
                 else
                 {
+                    var product = _context.products.Find(productId);
                     cartItem = new cartDetail
                     {
                         productId = productId,

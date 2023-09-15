@@ -580,3 +580,4 @@ C:\Users\rukac\OneDrive\Desktop\CNPM-ktxUtc2Store\CNPM-ktxUtc2_Store\CNPM-ktxUtc
 C:\Users\rukac\OneDrive\Desktop\CNPM-ktxUtc2Store\CNPM-ktxUtc2_Store\CNPM-ktxUtc2Store\CNPM-ktxUtc2Store\obj\Debug\net7.0\CNPM-ktxUtc2Store.csproj.CopyComplete
 C:\Users\rukac\OneDrive\Desktop\CNPM-ktxUtc2Store\CNPM-ktxUtc2_Store\CNPM-ktxUtc2Store\CNPM-ktxUtc2Store\obj\Debug\net7.0\CNPM-ktxUtc2Store.genruntimeconfig.cache
 C:\Users\rukac\OneDrive\Desktop\CNPM-ktxUtc2Store\CNPM-ktxUtc2_Store\CNPM-ktxUtc2Store\CNPM-ktxUtc2Store\obj\Debug\net7.0\ref\CNPM-ktxUtc2Store.dll
+C:\Users\rukac\OneDrive\Desktop\CNPM-ktxUtc2Store\CNPM-ktxUtc2_Store\CNPM-ktxUtc2Store\CNPM-ktxUtc2Store\bin\Debug\net7.0\bundleconfig.json

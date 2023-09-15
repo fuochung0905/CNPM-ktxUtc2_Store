@@ -9,8 +9,10 @@ namespace CNPM_ktxUtc2Store.Controllers
         {
             _cartService = cartService;
         }
+
         public async Task<IActionResult> AddItem(int productId, int quantity=1,int redirect=0)
         {
+            
             var cartCount = await _cartService.AddItem(productId, quantity);
             if(redirect == 0) { 
                 return Ok(cartCount);
@@ -29,11 +31,13 @@ namespace CNPM_ktxUtc2Store.Controllers
             var cart= await _cartService.GetUserCart();
             return View(cart);
         }
+
         public async Task<IActionResult> GetTotalItemInCart()
         {
             int cartItem=await _cartService.GetCartItemCount();
             return Ok(cartItem);
         }
+        
 
-    }
+        }
 }
