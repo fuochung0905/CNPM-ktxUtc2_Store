@@ -580,6 +580,7 @@ C:\Users\rukac\OneDrive\Desktop\CNPM-ktxUtc2Store\CNPM-ktxUtc2_Store\CNPM-ktxUtc
 C:\Users\rukac\OneDrive\Desktop\CNPM-ktxUtc2Store\CNPM-ktxUtc2_Store\CNPM-ktxUtc2Store\CNPM-ktxUtc2Store\obj\Debug\net7.0\CNPM-ktxUtc2Store.csproj.CopyComplete
 C:\Users\rukac\OneDrive\Desktop\CNPM-ktxUtc2Store\CNPM-ktxUtc2_Store\CNPM-ktxUtc2Store\CNPM-ktxUtc2Store\obj\Debug\net7.0\CNPM-ktxUtc2Store.genruntimeconfig.cache
 C:\Users\rukac\OneDrive\Desktop\CNPM-ktxUtc2Store\CNPM-ktxUtc2_Store\CNPM-ktxUtc2Store\CNPM-ktxUtc2Store\obj\Debug\net7.0\ref\CNPM-ktxUtc2Store.dll
+<<<<<<< HEAD
 C:\Users\FPTSHOP\OneDrive\Desktop\gitclone\CNPM-ktxUtc2_Store\CNPM-ktxUtc2Store\CNPM-ktxUtc2Store\obj\Debug\net7.0\CNPM-ktxUtc2Store.dll
 C:\Users\FPTSHOP\OneDrive\Desktop\gitclone\CNPM-ktxUtc2_Store\CNPM-ktxUtc2Store\CNPM-ktxUtc2Store\obj\Debug\net7.0\refint\CNPM-ktxUtc2Store.dll
 C:\Users\FPTSHOP\OneDrive\Desktop\gitclone\CNPM-ktxUtc2_Store\CNPM-ktxUtc2Store\CNPM-ktxUtc2Store\obj\Debug\net7.0\CNPM-ktxUtc2Store.pdb
@@ -871,3 +872,6 @@ C:\Users\FPTSHOP\OneDrive\Desktop\gitclone\CNPM-ktxUtc2_Store\CNPM-ktxUtc2Store\
 C:\Users\FPTSHOP\OneDrive\Desktop\gitclone\CNPM-ktxUtc2_Store\CNPM-ktxUtc2Store\CNPM-ktxUtc2Store\obj\Debug\net7.0\CNPM-ktxUtc2Store.csproj.CopyComplete
 C:\Users\FPTSHOP\OneDrive\Desktop\gitclone\CNPM-ktxUtc2_Store\CNPM-ktxUtc2Store\CNPM-ktxUtc2Store\obj\Debug\net7.0\CNPM-ktxUtc2Store.genruntimeconfig.cache
 C:\Users\FPTSHOP\OneDrive\Desktop\gitclone\CNPM-ktxUtc2_Store\CNPM-ktxUtc2Store\CNPM-ktxUtc2Store\obj\Debug\net7.0\ref\CNPM-ktxUtc2Store.dll
+=======
+C:\Users\rukac\OneDrive\Desktop\CNPM-ktxUtc2Store\CNPM-ktxUtc2_Store\CNPM-ktxUtc2Store\CNPM-ktxUtc2Store\bin\Debug\net7.0\bundleconfig.json
+>>>>>>> a05556a190c1005d192b6b03d0b8e7e3426a600f

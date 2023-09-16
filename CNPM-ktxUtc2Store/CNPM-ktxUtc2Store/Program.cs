@@ -1,6 +1,7 @@
 using CNPM_ktxUtc2Store.Data;
 using CNPM_ktxUtc2Store.Models;
 using CNPM_ktxUtc2Store.Service.Impl;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection.Extensions;
@@ -28,6 +29,13 @@ builder.Services.AddHttpContextAccessor();
 
 var app = builder.Build();
 
+    
+
+    
+
+  
+
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -47,9 +55,19 @@ app.UseRouting();
 
 app.UseAuthorization();
 
+
+app.MapControllerRoute(
+    name: "areas",
+      pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
+
+    );
+
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Home}/{action=Index}/{id?}"
+    
+    );
+   
 app.MapRazorPages();
 
 using (var scope = app.Services.CreateScope())
