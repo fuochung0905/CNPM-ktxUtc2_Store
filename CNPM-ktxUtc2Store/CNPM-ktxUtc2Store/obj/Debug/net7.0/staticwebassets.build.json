@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "3nZvyADMSCRt8IidgqcQ06QX8NYYAONfhiF/5laymKE=",
+  "Hash": "EV68E8kC7W+QBO7qcwVrYq1oscSBOpZjCWvYkbv8xgQ=",
   "Source": "CNPM-ktxUtc2Store",
   "BasePath": "_content/CNPM-ktxUtc2Store",
   "Mode": "Default",
@@ -1137,6 +1137,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\may-chay-bo-dien-sakura-hq-666-1.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\rukac\\OneDrive\\Desktop\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2_Store\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\js\\site - Copy.js",
+      "SourceId": "CNPM-ktxUtc2Store",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rukac\\OneDrive\\Desktop\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2_Store\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\",
+      "BasePath": "_content/CNPM-ktxUtc2Store",
+      "RelativePath": "js/site - Copy.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\site - Copy.js"
     },
     {
       "Identity": "C:\\Users\\rukac\\OneDrive\\Desktop\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2_Store\\CNPM-ktxUtc2Store\\CNPM-ktxUtc2Store\\wwwroot\\js\\site.js",
